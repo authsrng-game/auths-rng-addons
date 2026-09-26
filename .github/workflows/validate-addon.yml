@@ -1,0 +1,28 @@
+name: validate addon PR
+on:
+  pull_request:
+    paths:
+      - "submissions/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: find changed addon dirs
+        id: changed
+        run: |
+          DIRS=$(git diff --name-only origin/main...HEAD -- submissions | cut -d/ -f1-2 | sort -u)
+          echo "dirs<<EOF" >> $GITHUB_OUTPUT
+          echo "$DIRS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      - name: validate each
+        run: |
+          while IFS= read -r dir; do
+            [ -z "$dir" ] && continue
+            echo "validating $dir"
+            node ci/validate-addon.js "$dir"
+          done <<< "${{ steps.changed.outputs.dirs }}"

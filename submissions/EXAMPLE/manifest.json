@@ -1,0 +1,8 @@
+{
+  "id": "example-addon",
+  "version": "1.0.0",
+  "name": "example addon",
+  "author": "your-authsrng-username",
+  "permissions": ["readSave"],
+  "entry": "addon.js"
+}

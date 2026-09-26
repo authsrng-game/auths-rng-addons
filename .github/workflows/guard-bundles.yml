@@ -1,0 +1,28 @@
+name: guard bundles directory
+on:
+  pull_request:
+    paths:
+      - 'bundles/**'
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check actor is a maintainer
+        env:
+          MAINTAINERS: ${{ vars.MAINTAINERS }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          if [ -z "$MAINTAINERS" ]; then
+            echo "MAINTAINERS repo variable not set, failing closed"
+            exit 1
+          fi
+          IFS=',' read -ra LIST <<< "$MAINTAINERS"
+          for name in "${LIST[@]}"; do
+            if [ "$(echo "$name" | xargs)" = "$ACTOR" ]; then
+              echo "actor $ACTOR is a maintainer, allowed"
+              exit 0
+            fi
+          done
+          echo "actor $ACTOR is not a maintainer and this PR touches bundles/"
+          exit 1
