@@ -25,4 +25,4 @@ for.
 - `submissions/` - where you add your addon as a PR (`submissions/<your-id>/`)
 - `bundles/` - published, live addons (maintainer-only, gated by CODEOWNERS)
 - `ci/` - automated validation run on every submission PR
-- `Documentation/` - the documentation linked above
+- `docs` - the documentation linked above
