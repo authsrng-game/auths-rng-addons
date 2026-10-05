@@ -1,8 +1,0 @@
-{
-  "id": "session-stats",
-  "version": "1.0.0",
-  "name": "session stats",
-  "author": "auth",
-  "permissions": ["readSave"],
-  "entry": "addon.js"
-}
