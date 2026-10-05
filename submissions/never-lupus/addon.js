@@ -51,8 +51,14 @@
   div.style.height = "750px";
   div.style.background = "red";
   div.style.color = "white";
+  div.style.position = "absolute";
+  div.style.top = "50%";
+  div.style.left = "50%";
+  div.style.marginTop = "-375px";
+  div.style.marginLeft = "-375px";
+  div.style.zIndex = "99";
   div.style.fontFamily = "'Courier New', monospace";
-  div.style.display = 'none';
+  div.style.display = "none";
   div.innerHTML = house;
   document.body.appendChild(div);
 
