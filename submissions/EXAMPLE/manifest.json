@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "name": "example addon",
   "author": "your-authsrng-username",
-  "permissions": [],
+  "permissions": ["readSave"],
   "entry": "addon.js"
 }
