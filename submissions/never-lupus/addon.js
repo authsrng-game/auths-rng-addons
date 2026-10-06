@@ -47,15 +47,18 @@
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░`
   // my boy is so beautiful
   var div = document.createElement("div");
-  div.style.width = "750px";
-  div.style.height = "750px";
+	div.style.lineHeight = "1.1";
+	div.style.letterSpacing = "1.2";
+  div.style.width = "703px";
+  div.style.height = "720px";
   div.style.background = "red";
   div.style.color = "white";
-  div.style.position = "absolute";
+  div.style.position = "fixed";
   div.style.top = "50%";
   div.style.left = "50%";
-  div.style.marginTop = "-375px";
-  div.style.marginLeft = "-375px";
+  /*div.style.marginTop = "-375px";
+  div.style.marginLeft = "-375px";*/
+  div.style.transform = "translate(-50%, -50%)";
   div.style.zIndex = "99";
   div.style.fontFamily = "'Courier New', monospace";
   div.style.display = "none";
