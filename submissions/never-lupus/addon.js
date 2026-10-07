@@ -61,8 +61,10 @@
   div.style.marginLeft = "-375px";*/
   div.style.transform = `translate(-50%, -50%)`;
   div.style.zIndex = "99";
+  div.style.pointerEvents = "none";
   div.style.fontFamily = "'Courier New', monospace";
   div.style.display = "none";
+  div.style.whiteSpace = "pre";
   div.innerHTML = house;
   document.body.appendChild(div);
 
@@ -71,6 +73,9 @@
   });
   document.addEventListener('mouseup', (event) => {
     div.style.display = 'none';
+  });
+  document.addEventListener('mouseleave', () => {
+  	div.style.display = 'none';
   });
   document.addEventListener("keydown", ass, false);
 
