@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "name": "dr house",
   "author": "hesse",
-  "permissions": [],
+  "permissions": ["theme"],
   "entry": "addon.js"
 }
