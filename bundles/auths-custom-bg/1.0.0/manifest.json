@@ -1,0 +1,8 @@
+{
+"id": "auths-custom-bg",
+"version": "1.0.0",
+"name": "Custom Background",
+"author": "pig",
+"permissions": ["theme"],
+"entry": "addon.js"
+}
