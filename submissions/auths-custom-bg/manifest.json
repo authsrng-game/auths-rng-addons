@@ -4,5 +4,5 @@
 "name": "Custom Background",
 "author": "pig",
 "permissions": ["theme"],
-"entry": "custom-bg-addon.js"
+"entry": "addon.js"
 }
