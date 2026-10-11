@@ -48,7 +48,7 @@
     pop1.style.boxShadow = "0px 0px 0px 5px white inset";
     pop1.style.position = "fixed";
     pop1.style.fontFamily = "monospace";
-    pop1.style.fontSize = "32px";
+    pop1.style.fontSize = "1.6vw";
     pop1.style.whiteSpace = "pre-wrap";
     pop1.style.color = "#00FF00";
     pop1.style.textShadow = "0px 0px 8px green";
