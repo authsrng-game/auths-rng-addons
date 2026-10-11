@@ -80,7 +80,7 @@
     topbar.append(x);
 
     x.addEventListener('click', () => {
-      alert("ARE YOU SURE?????");
+      window.addNotification("ARE YOU SURE?????");
       pop1.remove();
     });
 
