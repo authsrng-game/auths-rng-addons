@@ -48,11 +48,12 @@
   // my boy is so beautiful
   let offsetx = 50;
   let offsety = 50;
+  let colors = [1, "black", "red", "yellow", "green", "blue", "purple", "pink"];
   var div = document.createElement("div");
-	div.style.lineHeight = "1.1";
+  div.style.lineHeight = "1.1";
   div.style.width = "703px";
   div.style.height = "720px";
-  div.style.background = "red";
+  div.style.background = "black";
   div.style.color = "white";
   div.style.position = "fixed";
   div.style.top = `50%`;
@@ -66,16 +67,36 @@
   div.style.display = "none";
   div.style.whiteSpace = "pre";
   div.innerHTML = house;
+	  
+  var ctrls = document.createElement("div");
+  ctrls.style.width = "400px";
+  ctrls.style.height = "100px";
+  ctrls.style.background = "none";
+  ctrls.style.color = "white";
+  ctrls.style.position = "fixed";
+  ctrls.style.transform = `translate(-200%, 60%)`;
+  ctrls.style.fontFamily = "monospace";
+  ctrls.style.fontWeight = "600";
+  ctrls.style.textAlign = "center";
+  ctrls.style.textShadow = "0px 0px 8px black, 0px 0px 16px black, 0px 0px 24px black";
+  ctrls.style.display = "none";
+  ctrls.style.pointerEvents = "none";
+  ctrls.style.whiteSpace = "pre";
+  ctrls.innerHTML = "S, Z, X, C to move\nP to change color";
   document.body.appendChild(div);
+  document.body.appendChild(ctrls);
 
   document.addEventListener('mousedown', (event) => {
-    div.style.display = 'block';
+    div.style.display = "block";
+	ctrls.style.display = "block";
   });
   document.addEventListener('mouseup', (event) => {
-    div.style.display = 'none';
+    div.style.display = "none";
+	ctrls.style.display = "none";
   });
   document.addEventListener('mouseleave', () => {
-  	div.style.display = 'none';
+  	div.style.display = "none";
+	ctrls.style.display = "none";
   });
   document.addEventListener("keydown", ass, false);
 
@@ -106,9 +127,17 @@
 						++offsety;
 					}
                     break;
+				case 80:
+					// P
+					colors[0] = (colors[0])%7+1;
+					break;
             }
-			}
-	  		div.style.top = `${offsety}%`;
+			div.style.top = `${offsety}%`;
   			div.style.left = `${offsetx}%`;
+	  		div.style.background = `${colors[colors[0]]}`;
+		  	let isBlack = colors[colors[0]]=="yellow"?8:4;
+		  	ctrls.style.textShadow = `0px 0px ${isBlack}px ${colors[colors[0]]}, 0px 0px ${isBlack*2}px ${colors[colors[0]]}, 0px 0px ${isBlack*3}px ${colors[colors[0]]}`;
+			}
   }
 })();
+
