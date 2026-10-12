@@ -11,8 +11,7 @@
     " MINECRAFT FREE DONLOD 1279 (REAL)\n GO TO HTTPS://MINECRAFTFREEREAL.COM\n DO IT NOW OR ELSE YOU WILL EVAPORATE\n YOU DON'T WANT TO EVAPORATE DO YOU\n FILLER TEXT OO DISTRACTION OO\n MINECRAFT GO MINECRAFT I LOVE MINECRAFT\n AAAHAHHHH\n WEAAEWWADASSG",
     " LOS POLLOS HERMANOS SPONSORS THE NEW\n FREE MINECRAFT DOWNLOAD REAL 1859!!\n JUST GO TO HTTPS://MINECRAFTFREEREAL.COM\n AND YOU WILL gERT THE FREE\n THE FREE MINECRAFT JUST FOR YOU\n THIS IS TRUE BY THE WAY SO TRUE \n THIS IS THE TRUEST THING EVER?\n YES",
     " DO YOU LOVE MINECRAFT (1692)?\n DO YOU ENJOY PLAYING MINECRAFT (1427)?\n THEN DOWNLOAD IT RIGHT NOW!!!! (REAL)\n DO IT. I KNOW YOU WANT TO.\n GO TO HTTPS://MINECRAFTFREEREAL.COM TO GET\n YOUR OWN FREE FREE COPY OF THE\n BEST GAME OF THE MILLENIUM!!!\n YAY!!!!!!!!",
-    " MINECRAFT\n MINECRAFT\n MINECRAFT\n MINECRAFT\n MINECRAFT\n MINECRAFT\n MINECRAFT\n HERE -> HTTPS://MINECRAFTFREEREAL.COM",
-    
+    " MINECRAFT\n MINECRAFT\n MINECRAFT\n MINECRAFT\n MINECRAFT\n MINECRAFT\n MINECRAFT\n HERE -> HTTPS://MINECRAFTFREEREAL.COM"
   ];
   
   const cards = ["♥", "♠", "♦", "♣", 0, 0]; // last two are for current symbol and color if you even CARE !!!!!!
@@ -22,7 +21,6 @@
   let yinc = 16;
 //let zinc = 8; Humor
   let goCard = true;
-  let opacity = 1;
 
   const hit = document.createElement("div");
   
@@ -163,9 +161,11 @@
     function decreaseOpacity(opacity){
       card.style.opacity = opacity;
       opacity -= .0625;
-      setTimeout(function(){
-        decreaseOpacity(opacity);
-      }, 25);
+      if(opacity > 0){
+        setTimeout(function(){
+          decreaseOpacity(opacity);
+        }, 25);
+      }
     }
     
     setTimeout(function(){
@@ -173,7 +173,7 @@
     }, 25);
     
     setTimeout(function(){
-      decreaseOpacity(opacity);
+      decreaseOpacity(1);
       //card.style.pointerEvents = "none";
     }, 25);
     
