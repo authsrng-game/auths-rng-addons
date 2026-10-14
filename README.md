@@ -13,7 +13,7 @@ for.
 
 - [Getting started](./docs/getting-started.md) - write your first addon
 - [manifest.json schema](./docs/manifest-schema.md)
-- [API reference](./docs/api-reference.md) - what your addon can safely read
+- [API reference](./docs/api-reference.md) - what your addon can safely read and edit
 - [Permissions](./docs/permissions.md)
 - [Security guidelines](./docs/security-guidelines.md)
 - [Submission process](./docs/submission-process.md)

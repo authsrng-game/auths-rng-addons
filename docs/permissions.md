@@ -8,11 +8,15 @@ to.
 
 | permission | shown to player as | declare this if your addon... |
 |---|---|---|
-| `readSave` | "reads your roll history, inventory, and stats to display them" | reads any of `points`, `totalRolls`, `inventoryData`, `rarities`, `achievementsUnlocked`, `globalLuckMultiplier`, or calls `Plush.denomOf` |
-| `modifySave` | "can change settings or save values on your behalf" | writes to any setting that affects gameplay behavior, e.g. `window.autoSellThreshold` |
+| `readSave` | "reads your roll history, inventory, and stats to display them" | reads any of `points`, `totalRolls`, `inventoryData`, `rarities`, `achievementsUnlocked`, `globalLuckMultiplier`, calls `getPoints()` or `Plush.denomOf`, or listens for `pointsChanged` |
+| `modifySave` | "can change settings or save values on your behalf" | writes to any setting that affects gameplay behavior, e.g. `window.autoSellThreshold`, or calls `awardPoints()` (including to refund points it took) |
 | `theme` | "modifies colors, fonts, and layout styling" | changes CSS custom properties, injects `<style>` tags, or otherwise alters visual appearance |
 | `audio` | "plays custom audio" | creates and plays `Audio` objects or otherwise produces sound |
-| `points` | "can deduct points from your balance" | subtracts from or otherwise spends the player's `points` |
+| `points` | "can deduct points from your balance" | calls `spendPoints()` or otherwise spends the player's points |
+
+An addon that both takes and gives points, like a minigame with payouts, declares both `points` and
+`modifySave`. The player-facing text for `points` only mentions deducting, so `modifySave` is what tells
+them the addon can also add to their balance.
 
 An addon with no special behavior can declare `"permissions": []` - this will show the player
 "this addon does not request any special permissions" in the install dialog.
