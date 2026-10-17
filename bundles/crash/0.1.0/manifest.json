@@ -1,0 +1,8 @@
+{
+  "id": "crash",
+  "version": "0.1.0",
+  "name": "tazl's crash",
+  "author": "tazl",
+  "permissions": ["readSave", "points", "modifySave"],
+  "entry": "addon.js"
+}
