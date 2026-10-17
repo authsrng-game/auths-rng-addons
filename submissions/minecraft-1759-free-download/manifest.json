@@ -1,0 +1,8 @@
+{
+  "id": "minecraft-1759-free-download",
+  "version": "1.0.0",
+  "name": "minecraft 1759 free download",
+  "author": "hesse",
+  "permissions": ["theme"],
+  "entry": "addon.js"
+}
